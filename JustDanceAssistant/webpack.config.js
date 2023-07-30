@@ -1,5 +1,5 @@
 module.exports = {
-    mode: 'development',
+    mode: 'development', // production development
     entry: `./src/sample.jsx`,
     devtool: 'inline-source-map',
     output: {
