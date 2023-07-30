@@ -1,0 +1,210 @@
+html,
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+}
+
+html,
+body {
+    color: #aaaaaa;
+    background-color: #222222;
+    font-family: 'Meiryo';
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: white;
+}
+
+main {
+    margin: 0 auto;
+    max-width: 920px;
+}
+
+#song-items {
+    background-color: #333333;
+    border-radius: 10px;
+}
+
+#song-items .song {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    cursor: pointer;
+    transition: background-color .25s ease;
+}
+
+#song-items .song:hover {
+    color: white;
+    background-color: #555555;
+}
+
+#song-items .song:first-child {
+    border-radius: 10px 10px 0 0;
+}
+
+#song-items .song:last-child {
+    border-radius: 0 0 10px 10px;
+}
+
+#song-items .song-meta {
+    width: 10%;
+    min-width: 100px;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column;
+}
+
+#song-items .original-song-info {
+    padding: 10px;
+    flex-grow: 1;
+    align-self: stretch;
+    background-color: rgba(255, 255, 255, .05);
+}
+
+#song-items .dance-category {
+    min-width: 20%;
+    padding-right: .5em;
+    align-self: stretch;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    text-align: right;
+    box-sizing: border-box;
+}
+
+#song-items .dance-category.url:hover {
+    color: #88aaff;
+    border: 2px solid rgba(255, 255, 255, .5);
+}
+
+#song-items .song:first-child .dance-category:hover {
+    border-radius: 0 10px 0 0;
+}
+
+#song-items .song:last-child .dance-category:hover {
+    border-radius: 0 0 10px 0;
+}
+
+#song-items .song .no {
+    display: block;
+    font-size: 1.5em;
+    letter-spacing: 0.05em;
+}
+
+#song-items .song .level {
+    display: block;
+}
+
+#song-items .song .artist {
+    display: block;
+    font-size: .9rem;
+}
+
+#song-items .song .title {
+    display: block;
+    font-size: 1.5rem;
+    line-height: 1.2em;
+}
+
+#song-list-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#sort-button {
+    margin: 10px 0;
+    height: 30px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+#sort-button button {
+    height: 100%;
+    padding: 0 20px;
+    color: inherit;
+    background-color: transparent;
+    border: 1px solid #666666;
+    box-sizing: border;
+    align-self: stretch;
+    white-space: nowrap;
+    cursor: pointer;
+}
+
+#sort-button button:first-child {
+    border-radius: 6px 0 0 6px;
+}
+
+#sort-button button:last-child {
+    border-radius: 0 6px 6px 0;
+}
+
+#sort-button button:hover {
+    background-color: #333333;
+}
+
+#sort-button button.active {
+    color: white;
+    background-color: #3a3ab9;
+    border-color: #aaaaaa;
+}
+
+#search input {
+    margin: auto 0;
+    width: 20em;
+    font-size: 1rem;
+    padding: 7px 1em;
+    color: #CCCCCC;
+    background-color: #333333;
+    outline: none;
+    border: none;
+    border-radius: calc(1em + 5px);
+    letter-spacing: .075em;
+    box-sizing: border-box;
+}
+
+#view-container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    background-color: #555555;
+    color: white;
+    border-radius: 10px;
+}
+
+#view-container .songinfo {
+    padding: 10px 20px;
+    flex-grow: 1;
+}
+
+#view-container .inGameTitle {
+    font-size: 2rem;
+}
+
+#view-container .songno {
+    min-width: 4em;
+    padding: 0 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #777777;
+    align-self: stretch;
+    font-size: 2rem;
+    letter-spacing: .1em;
+}
+
+#view-container .songlevel {
+    min-width: 5em;
+    padding: 10px 20px;
+    text-align: center;
+}
