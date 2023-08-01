@@ -65,7 +65,7 @@ class Song {
         let result = false;
 
         if (this.inGameTitle) {
-            result ||= this.inGameTitle.includes(text);
+            result ||= this.inGameTitle.toLowerCase().includes(text);
         }
 
         if (this.no) {
@@ -73,10 +73,10 @@ class Song {
         }
 
         if (this.category) {
-            result ||= this.category.includes(text);
+            result ||= this.category.toLowerCase().includes(text);
         }
 
-        result ||= this.title.includes(text);
+        result ||= this.title.toLowerCase().includes(text);
 
         return !!result;
     }
