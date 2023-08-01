@@ -127,6 +127,7 @@ main {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-flow: column;
 }
 
 #sort-button {
@@ -222,19 +223,40 @@ main {
     margin: 0 2.5%;
 }
 
+.mobile #song-list-head {
+    flex-flow: column;
+    align-items: flex-start;
+    margin: 1rem 0;
+}
+
 .mobile #song-items .dance-category {
     display: none;
 }
 
 .mobile #song-items .song-meta {
-    width: 150px;
-    min-width: 150px;
+    width: 120px;
+    min-width: 120px;
+}
+
+.mobile #song-items .song .no {
+    font-size: 1.6rem;
+    margin: -.1em 0 0 0;
+
 }
 
 .mobile #song-items .song .artist {
-    font-size: 1.2rem;
+    font-size: .95rem;
 }
 
 .mobile #song-items .song .title {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
+}
+
+.mobile #song-items .song .song-meta {
+    font-size: .9rem;
+}
+
+.mobile #song-items .song .level {
+    margin: -.25em 0 0 0;
+    font-size: .95rem;
 }
