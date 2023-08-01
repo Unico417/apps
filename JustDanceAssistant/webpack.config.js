@@ -1,6 +1,8 @@
+const production = false;
+
 module.exports = {
-    mode: 'development', // production development
-    entry: `./src/sample.jsx`,
+    mode: production ? 'production' : 'development',
+    entry: `./src/main.jsx`,
     devtool: 'inline-source-map',
     output: {
         path: `${__dirname}/build`,

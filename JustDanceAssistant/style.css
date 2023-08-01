@@ -36,6 +36,7 @@ main {
     display: flex;
     justify-content: flex-start;
     align-items: center;
+    border-bottom: 2px solid #222222;
     cursor: pointer;
     transition: background-color .25s ease;
 }
@@ -54,8 +55,8 @@ main {
 }
 
 #song-items .song-meta {
-    width: 10%;
-    min-width: 100px;
+    width: 120px;
+    min-width: 120px;
     padding: 10px;
     display: flex;
     justify-content: center;
@@ -94,6 +95,13 @@ main {
     border-radius: 0 0 10px 0;
 }
 
+#song-items .song .original-song-info {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-flow: column;
+}
+
 #song-items .song .no {
     display: block;
     font-size: 1.5em;
@@ -106,12 +114,12 @@ main {
 
 #song-items .song .artist {
     display: block;
-    font-size: .9rem;
+    font-size: 1.1rem;
 }
 
 #song-items .song .title {
     display: block;
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     line-height: 1.2em;
 }
 
@@ -207,4 +215,26 @@ main {
     min-width: 5em;
     padding: 10px 20px;
     text-align: center;
+}
+
+/* MOBILE */
+.mobile {
+    margin: 0 2.5%;
+}
+
+.mobile #song-items .dance-category {
+    display: none;
+}
+
+.mobile #song-items .song-meta {
+    width: 150px;
+    min-width: 150px;
+}
+
+.mobile #song-items .song .artist {
+    font-size: 1.2rem;
+}
+
+.mobile #song-items .song .title {
+    font-size: 1.5rem;
 }

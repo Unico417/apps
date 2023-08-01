@@ -20,4 +20,20 @@ function defined (...targets) {
     return result;
 }
 
-export { uid, defined };
+function checkMobile () {
+    const width = window.innerWidth;
+    const main = document.getElementsByTagName('main')[0];
+    let mobile = false;
+
+    if (width < 950) {
+        main.classList.add('mobile');
+        mobile = true;
+    } else {
+        main.classList.remove('mobile');
+        mobile = false;
+    }
+
+    return mobile;
+}
+
+export { uid, defined, checkMobile };

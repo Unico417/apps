@@ -1,7 +1,6 @@
 import React from "react";
-
-import { SongListManager } from '../SongListManager';
 import { SongItem } from "./SongItem";
+
 
 /**
  * 楽曲リストを表示
@@ -15,9 +14,11 @@ class SongList extends React.Component {
     constructor(props) {
         super(props);
 
-        this.manager = new SongListManager(this);
+        this.manager = this.props.manager;
+        this.manager.reactView = this;
 
         this.state = {
+            mobile: this.manager.mobile,
             songs: this.manager.songs,
             search: '',
         };
@@ -71,6 +72,7 @@ class SongList extends React.Component {
      */
     render () {
         const songs = this.state.songs;
+        const mobile = this.state.mobile;
         return (
             <div>
                 <div id="song-list-head">
@@ -97,6 +99,7 @@ class SongList extends React.Component {
                             <SongItem
                                 key={song.id}
                                 song={song}
+                                mobile={mobile}
                             />);
                     })}
                 </div>

@@ -13,23 +13,33 @@ class SongListManager {
 
     /**
      * 楽曲リストを作成
-     * @param {*} reactView 
      */
-    constructor(reactView) {
-        if (!defined(reactView)) {
-            throw new Error('reactViewが未定義です。');
-        }
-
+    constructor() {
         this.songs = [];
         this.allSongs = [];
-        this.reactView = reactView;
+        this.reactView = undefined;
 
         const viewNode = document.getElementById('song-view');
         const viewRoot = ReactDOM.createRoot(viewNode);
         this.viewRoot = viewRoot;
 
+        this._mobile = false;
+
         this.initialize();
         this.sortByNumber();
+    }
+
+    set mobile (isMobile) {
+        this._mobile = isMobile;
+        if (this.reactView) {
+            this.reactView.setState({
+                mobile: isMobile
+            });
+        }
+    }
+
+    get mobile () {
+        return this._mobile;
     }
 
     /**

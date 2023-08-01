@@ -57,10 +57,12 @@ class SongItem extends React.Component {
      */
     render () {
 
-        if (!this.state.visible) return null;
-
         /** @type {Song} */
         const song = this.props.song;
+        const mobile = this.props.mobile;
+
+        if (!this.state.visible
+            || (!song.isGameRegistered && mobile)) return null;
 
         const no
             = song.no
@@ -80,14 +82,23 @@ class SongItem extends React.Component {
                 : song.url;
 
         const categoryNode
-            = song.isGameRegistered
-                ? (<span className="category">{category}</span>)
-                : getCategoryNode(category);
+            = mobile
+                ? null
+                : song.isGameRegistered
+                    ? (<span className="category">{category}</span>)
+                    : getCategoryNode(category);
 
         const categoryClassName
             = song.isGameRegistered
                 ? 'dance-category'
                 : 'dance-category url';
+
+        const mobileCategoryNode
+            = mobile
+                ? song.isGameRegistered
+                    ? category
+                    : <span className="categoryClassName">YouTube</span>
+                : null;
 
         return (
             <div
@@ -95,6 +106,7 @@ class SongItem extends React.Component {
                 onClick={this.onClickSong.bind(this)}
             >
                 <div className="song-meta">
+                    {mobileCategoryNode}
                     <span className="no">{no}</span>
                     <span className="level">★ {level}</span>
                 </div>
