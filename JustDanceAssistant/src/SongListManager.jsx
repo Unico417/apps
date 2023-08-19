@@ -57,6 +57,23 @@ class SongListManager {
         this.allSongs = songs;
     }
 
+    randomPick () {
+        const songs = this.songs;
+
+        const visibleSongs = [];
+        for (const song of songs) {
+            if (song.component.state.visible) {
+                visibleSongs.push(song);
+            }
+        }
+
+        const max = visibleSongs.length;
+        const index = Math.trunc(Math.random() * max);
+        const pickSong = visibleSongs[index];
+
+        this.updateSongView(pickSong);
+    }
+
     /**
      * 楽曲を詳細欄に表示
      * @param {Song} song 
@@ -78,7 +95,6 @@ class SongListManager {
                     : true;
             song.component.setState({ visible: visible });
         }
-
     }
 
     /**

@@ -24,6 +24,10 @@ class SongList extends React.Component {
         };
     }
 
+    onRandomPick (e) {
+        this.manager.randomPick();
+    }
+
     /**
      * 検索欄の文字列で一致する楽曲のみ表示
      * @param {*} e 
@@ -89,8 +93,13 @@ class SongList extends React.Component {
                             value={'songSortsWithLevel'}>レベル</button>
                     </div>
                     <div id="search">
-                        <input type="text"
+                        <input
+                            type="text"
+                            placeholder="Search"
                             onChange={this.onSearch.bind(this)} />
+                        <button
+                            onClick={this.onRandomPick.bind(this)}
+                        >ランダム選曲</button>
                     </div>
                 </div>
                 <div id="song-items">

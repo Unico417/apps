@@ -56,7 +56,7 @@ class Song {
     }
 
     /**
-     * 検索文字列にいずれかの要素が含まれていればtrueを返す
+     * 楽曲情報に、検索文字列が含まれていればtrueを返す
      * @param {String} text 
      * @returns 
      */
@@ -64,21 +64,16 @@ class Song {
 
         let result = false;
 
-        if (this.inGameTitle) {
-            result ||= this.inGameTitle.toLowerCase().includes(text);
+        if (
+            this.title.toLowerCase().includes(text)
+            || this.inGameTitle && this.inGameTitle.toLowerCase().includes(text)
+            || this.no && this.no.toString().includes(text)
+            || this.category && this.category.toLowerCase().includes(text)
+        ) {
+            result = true;
         }
 
-        if (this.no) {
-            result ||= this.no.toString().includes(text);
-        }
-
-        if (this.category) {
-            result ||= this.category.toLowerCase().includes(text);
-        }
-
-        result ||= this.title.toLowerCase().includes(text);
-
-        return !!result;
+        return result;
     }
 
     static fromJSON (songInfo) {

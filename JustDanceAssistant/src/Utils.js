@@ -20,6 +20,10 @@ function defined (...targets) {
     return result;
 }
 
+/**
+ * スマートフォンからのアクセスであれば、`<main>`に"mobile"クラスを付与する
+ * @returns {Boolean}
+ */
 function checkMobile () {
     const width = window.innerWidth;
     const main = document.getElementsByTagName('main')[0];
